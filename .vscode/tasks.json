@@ -1,17 +1,34 @@
 {
     "version": "2.0.0",
     "tasks": [
-      {
-        "label": "build hello world",
-        "type": "shell",
-        "command": "gcc",
-        "args": ["-g", "-o", "helloworld", "helloworld.c"],
-        "group": {
-          "kind": "build",
-          "isDefault": true
+        {
+            "label": "build program",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g",
+                "-o",
+                "program",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "gcc.exe build active file",
+            "command": "C:\\MinGW\\bin\\gcc.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\MinGW\\bin"
+            }
         }
-      }
     ]
-  }
-
-  
+}
