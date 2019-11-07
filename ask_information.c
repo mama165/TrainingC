@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int main(int argc, char *argv []) {
     char firstName[20] = "";
@@ -11,9 +12,10 @@ int main(int argc, char *argv []) {
     printf("lastName ?\n");
     scanf("%s", lastName);
     printf("age ?\n");
-    scanf("%d", age);
+    scanf("%d", &age);
 
-    printf("You are %s %s , %d years old", firstName, lastName, age);
 
+    printf("You are %s %s (%d years old)", firstName, lastName, age);
+    sleep(2);
     return 0;
 }

@@ -1,0 +1,117 @@
+Demander joueur I de jouer
+    if la position est possible
+        Placer position joueur I
+        if joueur I win
+            afficher message "Le joueur I a gagné"
+            Sortir du programme
+        else
+            Décrémenter compteur de places
+            if il reste de la place pour jouer
+                Demander au joueur II de jouer
+            else
+                afficher message "Egalité"
+                Sortir du programme
+    else
+        Demander joueur I de jouer (again)
+
+
+
+Demander joueur II de jouer
+    if la position est possible
+        Placer position joueur II
+        if joueur II win
+            afficher message "Le joueur II a gagné"
+            Sortir du programme
+        else
+            Décrémenter compteur de places
+            if il reste de la place pour jouer
+                Demander au joueur I de jouer
+            else
+                afficher message "Egalité"
+                Sortir du programme
+    else
+        Demander joueur II de jouer (again)
+
+
+start() {
+    play("x");
+}
+
+play(symbol) {
+    Demander joueur I de jouer
+    if la position est possible
+        Placer position joueur I
+        if joueur I win
+            afficher message "Le joueur I a gagné"
+            Sortir du programme
+        else
+            Décrémenter compteur de places
+            if il reste de la place pour jouer
+                Demander au joueur II de jouer
+            else
+                afficher message "Egalité"
+                Sortir du programme
+    else
+        Demander joueur I de jouer (again)
+}
+
+(0,0)(0,1)(0,2)
+(1,0)(1,1)(1,2)
+(2,0)(2,1)(2,2)
+
+Pour a(i,j)
+    haut => i=i-1
+    diago. haut gauche => i = i-1 & j=j-1
+    gauche => j = j-1
+    diago. bas droite => i=i+1 & j=j-1
+    bas => i=i+1
+    diago.bas droite => i=i+1 & j=j+1
+    droite => j=j+1
+    diago. droite droite => i=i-1 & j=j+1 
+
+
+isWinner(i,j,direction) {
+    isWinner(i,j,direction,a(i,j),1)
+}
+
+isWinner(i,j,direction,previousSymbole,occurencesOfSymbole) {
+    newSymbole = a(i,j);
+    
+    if(i > 0 & j > 0 & /*previousSymbole != null */ & previousSymbole == newSymbole) {
+    occurencesOfSymbole++;
+    
+    if (occurencesOfSymbole == 3) return true;
+    
+    switch(direction) {
+        case haut:
+           isWinner(i-1,j,direction, newSymbole,occurencesOfSymbole);
+
+        case diago. haut gauche:
+           isWinner(i-1,j-1,direction,newSymbole,occurencesOfSymbole)
+
+        case gauche:
+           isWinner(i,j-1,direction,newSymbole,occurencesOfSymbole)
+
+        case diago. bas droite:
+           isWinner(i+1,j-1,direction,newSymbole,occurencesOfSymbole)
+
+        case bas:
+           isWinner(i+1,j,direction,newSymbole,occurencesOfSymbole)
+           
+        case diago.bas droite: 
+           isWinner(i+1,j+1,direction,newSymbole,occurencesOfSymbole)
+
+        case droite:
+           isWinner(i,j+1,direction,newSymbole,occurencesOfSymbole)
+
+        case diago. droite droite:
+           isWinner(i-1,j+1,direction,newSymbole,occurencesOfSymbole) 
+     }
+    }
+    
+    return false;
+}
+
+xox oox
+oxo oxx
+xoo xox

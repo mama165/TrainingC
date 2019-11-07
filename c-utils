@@ -14,3 +14,21 @@ long
 float
         0           01111010      01010011101001010101001 (4 bytes)==(2^32)
     sign(1bit)  exponent(8 bits)    fraction(23 bits)
+
+
+#--------------------------ERRORS--------------------------
+#https://www.geeksforgeeks.org/core-dump-segmentation-fault-c-cpp/
+#https://openclassrooms.com/forum/sujet/segmentation-fault-core-dumped-28608
+
+#Segmentation fault (core dumped)
+#scanfexpects address of a variable as an input.
+#Here in this program n takes value of 2 and assume it’s address as 1000.
+#If we pass n to scanf(), input fetched from STDIN is placed in invalid memory 2 which should be 1000 instead.It’s a memory corruption leading to Seg fault.
+
+#include <stdio.h> 
+int main()  
+{ 
+   int n = 2; 
+   scanf("%d",n); 
+   return 0; 
+} 
