@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int main(int argc, char *argv []) {
     char firstName[20] = "";
     char lastName[20] = "";
     int age = 0;
 
-    printf("firstName ?\n");
+    printf("What's your firstName ?\n");
     scanf("%s", firstName);
-    printf("lastName ?\n");
+    printf("Ok and lastName ?\n");
     scanf("%s", lastName);
-    printf("age ?\n");
-    scanf("%d", age);
+    printf("And age ?\n");
+    scanf("%d", &age);
 
-    printf("You are %s %s , %d years old", firstName, lastName, age);
-
+    printf("You are %s %s %d yo", firstName, lastName, age);
+    sleep(2);
     return 0;
 }

@@ -1,2 +1,16 @@
 #--------------------------C-UTILS--------------------------
 
+#https://www.sciencebuddies.org/science-fair-projects/references/ascii-table
+#Principal types
+char
+    -128 to 127 (1 byte)==(2^8)
+    each chararacter is assigned a unique 8-bit code (ASCII)
+short
+    -32768 to 32767 (2 bytes)==(2^16)
+int
+    -32768 to 32767 (2 bytes)==(2^16)
+long
+    -2147483648 to 2147483647 (4 bytes)==(2^32)
+float
+        0           01111010      01010011101001010101001 (4 bytes)==(2^32)
+    sign(1bit)  exponent(8 bits)    fraction(23 bits)
