@@ -3,19 +3,18 @@
 #include <unistd.h>
 
 int main(int argc, char *argv []) {
-    char firstName[20] = "";
-    char lastName[20] = "";
-    int age = 0;
+    char bufferFirstName[20] = "";
+    char bufferLastName[20] = "";
+    int bufferAge = 0;
 
-    printf("firstName ?\n");
-    scanf("%s", firstName);
-    printf("lastName ?\n");
-    scanf("%s", lastName);
-    printf("age ?\n");
-    scanf("%d", &age);
+    puts("FirstName ?");
+    scanf("%s", bufferFirstName);
+    puts("LastName ?");
+    scanf("%s", bufferLastName);
+    puts("Age ?");
+    scanf("%d", &bufferAge);
 
-
-    printf("You are %s %s (%d years old)", firstName, lastName, age);
+    printf("You are %s %s (%d years old)", bufferFirstName, bufferLastName, bufferAge);
     sleep(2);
-    return 0;
+    return EXIT_SUCCESS;
 }
