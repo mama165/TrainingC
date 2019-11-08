@@ -8,7 +8,7 @@
             "args": [
                 "-g",
                 "-o",
-                "program",
+                "bin/output",
                 "${file}"
             ],
             "group": {
@@ -17,8 +17,8 @@
             }
         },
         {
-            "type": "shell",
             "label": "gcc.exe build active file",
+            "type": "shell",
             "command": "C:\\MinGW\\bin\\gcc.exe",
             "args": [
                 "-g",
