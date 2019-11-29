@@ -12,7 +12,12 @@ int main(int argc, char *argv []) {
     puts("LastName ?");
     scanf("%s", bufferLastName);
     puts("Age ?");
-    scanf("%d", &bufferAge);
+    
+    // int value = scanf("%d", &bufferAge);
+    
+    while (scanf("%d", &bufferAge) != 1) {
+        printf("Bad age, fill it again \n");
+    }
 
     printf("You are %s %s (%d years old)", bufferFirstName, bufferLastName, bufferAge);
     sleep(2);

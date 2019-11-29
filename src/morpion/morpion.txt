@@ -115,3 +115,18 @@ isWinner(i,j,direction,previousSymbole,occurencesOfSymbole) {
 xox oox
 oxo oxx
 xoo xox
+
+isWinner(a) {
+    return isWinner(a, a(0,0), 0, 0, 0);
+}
+
+isWinner(a, previous, i, j, occurence) {
+    if(i j are outside || a(i,j)==null) or occurence == 3) return;
+    current = a(i,j);
+    if (previous == current) occurence++;
+    isWinner(a, current, i, j+1, occurence);
+    isWinner(a, current, i+1, j, occurence);
+    isWinner(a, current, i, j-1, occurence);
+    isWinner(a, current, i-1, j, occurence);
+    return occurence == 3;
+}

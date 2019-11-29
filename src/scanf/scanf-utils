@@ -13,7 +13,8 @@ int sscanf( const char * buffer, const char *format, ... );
 #Segmentation fault (core dumped)
 #scanfexpects address of a variable as an input.
 #Here in this program n takes value of 2 and assume it’s address as 1000.
-#If we pass n to scanf(), input fetched from STDIN is placed in invalid memory 2 which should be 1000 instead.It’s a memory corruption leading to Seg fault.
+#If we pass n to scanf(), input fetched from STDIN is placed in invalid memory 2 which should be 1000 instead.
+It’s a memory corruption leading to segmentation fault.
 
 #include <stdio.h> 
 int main()  
